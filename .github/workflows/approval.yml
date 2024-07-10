@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - uses: actions/checkout@v2
@@ -22,5 +23,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --configuration Release
     - name: Deploy to environment
-      environment: production
       run: echo "Deploying to production environment"
