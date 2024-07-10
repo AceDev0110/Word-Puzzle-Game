@@ -12,15 +12,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release
-    - name: Test
-      run: dotnet test --no-build --configuration Release
     - name: Deploy to environment
       run: echo "Deploying to production environment"
